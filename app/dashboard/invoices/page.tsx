@@ -17,20 +17,24 @@ export default async function Page(props: {
   const currentPage = Number(searchParams?.page) || 1;
 
   return (
-    <div className="w-full">
-      <div className="flex w-full items-center justify-between">
-        <h1 className={`${lusitana.className} text-2xl`}>Invoices</h1>
-      </div>
-      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-        <Search yertutucu="Faturalarda ara..." />
-        <CreateInvoice />
-      </div>
-      <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
-        <Table query={query} currentPage={currentPage} />
-      </Suspense>
-      <div className="mt-5 flex w-full justify-center">
-        {/* <Pagination totalPages={totalPages} /> */}
-      </div>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Invoices</h1>
+      <table className="min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr>
+            <th className="px-4 py-2 border-b">ID</th>
+            <th className="px-4 py-2 border-b">Name</th>
+            <th className="px-4 py-2 border-b">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="px-4 py-2 border-b">1</td>
+            <td className="px-4 py-2 border-b">Invoice 1</td>
+            <td className="px-4 py-2 border-b">$100</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import {
   UserGroupIcon,
   HomeIcon,
   DocumentDuplicateIcon,
+  BeakerIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -19,6 +20,11 @@ const links = [
     icon: DocumentDuplicateIcon,
   },
   { name: "Customers", href: "/dashboard/customers", icon: UserGroupIcon },
+  {
+    name: "Sebzeler",
+    href: "/dashboard/sebzeler",
+    icon: BeakerIcon,
+  },
 ];
 
 export default function NavLinks() {
@@ -38,7 +44,7 @@ export default function NavLinks() {
               }
             )}
           >
-            <LinkIcon className="w-6" />
+            <LinkIcon className="w-6 h-6 shrink-0" />
             <p className="hidden md:block">{link.name}</p>
           </Link>
         );
